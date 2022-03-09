@@ -1,0 +1,256 @@
+.popup-box {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.314);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 12;
+  --background-contact: #b0d7da;
+  --border-contact: #6bb9be;
+}
+.popup-box .box {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  height: 87%;
+  margin: 0 auto;
+  top: 50%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px 40px 0 40px;
+  border: 1px solid #999;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.popup-box .box_content {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.box span {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.box span::after {
+  content: "";
+  position: absolute;
+  width: 43px;
+  height: 4px;
+  background-color: var(--border-contact);
+  left: 0;
+  bottom: -1px;
+  border-radius: 5px;
+}
+.box span::before {
+  content: "* All Fields Required";
+  position: absolute;
+  top: 50px;
+  color: #e9503e;
+  font-size: 12px;
+  font-weight: 400;
+  left: 0;
+}
+/* Start All inputs */
+.popup-box .box .input-box {
+  position: relative;
+  width: 320px;
+  height: 45px;
+  margin-bottom: 30px;
+}
+.popup-box .box .input-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: normal;
+  outline: none;
+  padding-left: 15px;
+  background: var(--background-contact);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.popup-box .box .input-box input:focus,
+.popup-box .box .input-box input:valid {
+  border-color: var(--border-contact);
+  background-color: #fff;
+}
+.popup-box .box .input-box label {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  padding: 0 4px;
+  color: #636c72;
+  font-size: 14px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.popup-box .box .input-box input:focus ~ label,
+.popup-box .box .input-box input:valid ~ label {
+  top: 0;
+  left: 12px;
+  color: var(--border-contact);
+  display: 13px;
+  background: #fff;
+}
+.box .box_content .username-info {
+  display: flex;
+  justify-content: space-between;
+}
+.box .box_content .firstname-box,
+.box .box_content .lastname-box {
+  width: 47% !important;
+}
+.box .box_content .ingredient-info {
+  display: flex;
+  justify-content: space-between;
+}
+.box .box_content .ingredient {
+  position: relative;
+  width: 46% !important;
+}
+.box .ingredient-btn {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+}
+.box .box_content .quantity-box {
+  width: 25% !important;
+}
+.box .box_content .unit-box {
+  width: 23% !important;
+}
+.box .box_content .unit-box select {
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #bbb;
+  height: 60%;
+  color: #636c72;
+  background-color: var(--background-contact);
+}
+.box .box_content .category--food {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.box .box_content .category--food select {
+  padding-left: 10px;
+  height: 30px;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  width: 55%;
+}
+.box .file-box {
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+.box .file-box label,
+.box .box_content .category--food p {
+  margin-right: 15px;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--border-contact);
+}
+.box .ingAdded{
+  width: 270px;
+  height: 75px;
+  overflow: auto;
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 5px;
+  color: #222;
+}
+.box .buttons {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box .submit-btn,
+.box .close-btn,
+.box .ingredient-btn {
+  outline: none;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 7px;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  width: 80px;
+  height: 35px;
+}
+.box .submit-btn {
+  background: #6f93f6;
+}
+.box .submit-btn:hover {
+  background: #335bc9;
+  border-radius: 18px;
+}
+.box .close-btn {
+  background: #ec5f95;
+}
+.box .close-btn:hover {
+  background: #e90156;
+  border-radius: 18px;
+}
+.box .ingredient-btn {
+  background: #6f93f6;
+}
+.box .ingredient-btn:hover {
+  background: #3a60c7;
+}
+/* End All inputs */
+.box .box_img img {
+  width: 590px;
+  transform: rotate(295deg);
+  position: absolute;
+  top: -100px;
+  right: -140px;
+}
+@media (max-width: 1199px) {
+  .box .box_img img {
+    right: -250px;
+  }
+}
+@media (max-width: 991px) {
+  .box .box_img img {
+    display: none;
+  }
+  .popup-box .box .box_content {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
+  .popup-box .box {
+    width: 95%;
+    padding: 10px;
+    top: 10px;
+    transform: translate(-50%, 0);
+  }
+  .popup-box .box .box_content {
+    margin: 0 auto;
+  }
+  .popup-box .box .input-box {
+    width: 270px;
+  }
+}
+@media (max-width: 575px) {
+  .popup-box .box .input-box label {
+    left: 5px;
+  }
+}

@@ -1,0 +1,117 @@
+.navbar {
+  background-color: #f3eaeb;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.navbar .container-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.navbar .navbar-image img {
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+}
+.navbar .icon img {
+  display: none;
+}
+.navbar .navbar-links {
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-links li {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 30px;
+  list-style-type: none;
+  position: relative;
+}
+.navbar .navbar-links li::before {
+  content: "";
+  position: absolute;
+  background-color: #e9503e;
+  width: 0%;
+  height: 3px;
+  bottom: -4px;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+}
+.navbar .navbar-links li:hover::before {
+  width: 100%;
+}
+.navbar .navbar-links li.left::before {
+  left: 0;
+}
+.navbar .navbar-links li.center::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbar .navbar-links li.right::before {
+  right: 0;
+}
+.navbar .navbar-links a {
+  color: #61899c;
+  text-align: center;
+  text-decoration: none;
+}
+.navbar .fa-bars:before,
+.fa-navicon:before {
+  font-size: 30px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  display: none;
+  margin-right: 15px;
+  transform: translateY(-50%);
+}
+.navbar .nav__btn {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 110px;
+  font-size: 14px;
+  height: 30px;
+  font-weight: bold;
+  background-color: #e9503e;
+  border-radius: 6px;
+  color: white;
+  margin-right: 20px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .nav__btn:hover {
+  background-color: #ff605d;
+  border-radius: 18px;
+}
+body.active-scroll {
+  overflow-y: hidden;
+}
+@media (max-width: 767px) {
+  .navbar .navbar-links {
+    display: none;
+  }
+  .navbar .nav__btn {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+  }
+  .navbar .icon img {
+    display: block;
+  }
+  .navbar .container-nav {
+    justify-content: space-between;
+  }
+  .navbar .fa-bars:before,
+  .fa-navicon:before {
+    display: block;
+  }
+}

@@ -1,0 +1,73 @@
+.foods-dashboard{
+  height: 70vh;
+}
+.foods-dashboard .food-showAll {
+  border: 1px solid #bbb;
+  border-radius: 25px;
+  padding: 15px 15px;
+  height: 300px;
+  overflow: auto;
+  background-color: white;
+  max-width: 90%;
+  margin: 40px auto;
+}
+.foods-dashboard h1 {
+  font-size: 25px;
+}
+.foods-dashboard .showAll-column {
+  width: 100%;
+}
+.foods-dashboard .showAll-column th {
+  text-align: left;
+  padding-bottom: 20px;
+}
+.foods-dashboard .showAll-column td {
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.food-delete {
+  border: 1px solid #bbb;
+  border-radius: 25px;
+  padding: 15px 15px;
+  margin-top: 40px;
+  background-color: white;
+}
+.food-delete .delete-info {
+  display: flex;
+  align-items: center;
+}
+.food-delete input {
+  width: 250px;
+  height: 30px;
+}
+.food-delete .delete-btn {
+  margin-left: 10px;
+  width: 80px;
+  height: 30px;
+  font-size: 15px;
+}
+.foods-dashboard .update-info {
+  display: flex;
+  align-items: center;
+}
+.foods-dashboard .update-info input {
+  margin-right: 10px;
+}
+@media (max-width: 767px) {
+  .food-delete .delete-info {
+    flex-direction: column;
+  }
+  .food-delete input {
+    margin-bottom: 10px;
+  }
+  .foods-dashboard .update-info {
+    flex-direction: column;
+  }
+  .foods-dashboard .update-info input {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}

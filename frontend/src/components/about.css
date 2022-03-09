@@ -1,0 +1,35 @@
+.about {
+  width: 650px;
+  background-color: white;
+  border: 1px solid #bbbbbb;
+  border-radius: 20px;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  padding-bottom: 15px;
+}
+.about h1 {
+  text-align: center;
+}
+.about p {
+  width: 80%;
+  font-size: 18px;
+  height: 100%;
+  margin: 20px auto;
+  font-weight: normal;
+}
+@media (max-width: 767px) {
+  .about{
+    width: 500px;
+  }
+.about p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 550px) {
+  .about{
+    width: 350px;
+  }
+.about p {
+    font-size: 17px;
+  }
+}

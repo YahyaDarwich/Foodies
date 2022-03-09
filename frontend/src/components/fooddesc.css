@@ -1,0 +1,117 @@
+#fooddesc {
+  background-color: white;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+#fooddesc > div:nth-child(1) img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+#fooddesc > div:nth-child(1) {
+  flex-basis: 65%;
+  background-color: white;
+  margin: 20px 10px;
+  border: 1px solid white;
+  border-radius: 3%;
+}
+#fooddesc > div:nth-child(1) > p:nth-child(2) {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+#fooddesc > div:nth-child(1) p {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+#fooddesc > div:nth-child(1) > span {
+  font-size: 12px;
+  color: #e9503e;
+}
+#fooddesc .ingredient-list {
+  margin-top: 30px;
+}
+#fooddesc .ingredient-list lh {
+  font-size: 16px;
+}
+#fooddesc > div:nth-child(2) img {
+  width: 135px;
+  height: 85px;
+  border-radius: 7px;
+}
+#fooddesc > div:nth-child(2) span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e9503e;
+  display: flex;
+  justify-content: center;
+}
+#fooddesc > div:nth-child(2) p {
+  font-size: 14px;
+  padding-left: 10px;
+  width: 50%;
+  color: #333;
+  font-weight: normal;
+}
+
+#fooddesc > div:nth-child(2) > div {
+  display: flex;
+  justify-content: center;
+  padding: 7% 0% 0% 0%;
+  align-items: center;
+}
+#fooddesc > div:nth-child(2) > div:last-child {
+  padding: 7% 0% 7% 0%;
+}
+.oneCategry-group div {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  align-items: center;
+}
+.oneCategry-group{
+  padding: 15px 5px;
+  border: 1px solid rgba(51, 51, 51, 0.07);
+}
+.oneCategry-group:hover{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 10%);
+}
+#fooddesc .delete-btn {
+  margin-top: 20px;
+  border: 0;
+  width: 90px;
+  font-size: 15px;
+  height: 30px;
+  font-weight: bold;
+  background-color: #e9503e;
+  border-radius: 6px;
+  color: white;
+  margin-right: 20px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#fooddesc .delete-btn:hover {
+  background-color: #ff605d;
+  border-radius: 18px;
+}
+@media only screen and (max-width: 900px) {
+  #fooddesc {
+    flex-direction: column;
+  }
+  #fooddesc > div:nth-child(2) {
+    width: 95%;
+  }
+  #fooddesc > div:nth-child(2) img {
+    width: 50%;
+    height: auto;
+  }
+}

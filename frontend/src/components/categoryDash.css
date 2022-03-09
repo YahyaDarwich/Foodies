@@ -1,0 +1,47 @@
+#category-dash-container{
+  height: 80vh;
+}
+#category-dash-container > form:nth-child(2) > table{
+width: 100%;
+text-align: center;
+}
+#category-dash-container > form:nth-child(1){
+text-align: center;
+margin-bottom: 20px;
+background-color: #f8ff82;
+padding: 10px;}
+#category-dash-container > form:nth-child(2) > table > tr:nth-child(1){
+background-color:#dcb0fe;
+}
+#category-dash-container > form:nth-child(1) > input{
+margin: 1% 1%;
+}
+#category-dash-container> form > div > table > tr> td > button:nth-child(1){
+margin-right: 10px;
+}
+#category-dash-container> form > table > tr > td> button:nth-child(1){
+margin-right: 10px;
+}
+
+  @media all and (max-width:1100px){
+    #category-dash-container > form:nth-child(2) > table > tr:nth-child(1){display: none;}
+    #category-dash-container > form:nth-child(1){   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    #category-dash-container > form > table{
+    width:50%;
+    margin: 0 auto;
+    }
+    #category-dash-container > form > table > tr > td{
+    display:block;
+    width:100%;
+    }
+    #category-dash-container > form > table > tr{
+    display:block;
+    margin-top:15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+    }
+    }

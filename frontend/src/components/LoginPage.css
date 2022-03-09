@@ -1,0 +1,138 @@
+.login-page {
+  max-width: 930px;
+  padding: 40px 30px;
+  background: #fff;
+  border: 1px solid #bbbbbb;
+  border-radius: 15px;
+  margin: 60px auto;
+  overflow: hidden;
+  --yellow-color: #f4bb28;
+  --blue-color: #60aef3;
+}
+
+.login-page h1 {
+  position: relative;
+  color: black;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+.login-page h1::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background-color: var(--yellow-color);
+  top: 30px;
+  left: 0;
+}
+.login-page .login_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-page .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: 0 10px;
+}
+.login-page .profile-icon,
+.login-page .password-icon {
+  position: relative;
+}
+.login-page .profile-icon i,
+.login-page .password-icon i {
+  position: absolute;
+  top: 50%;
+  font-size: 25px;
+  left: 0;
+  transform: translateY(20%);
+  color: var(--blue-color);
+}
+.login-page .form-group .email,
+.form-group .password {
+  width: 300px;
+  height: 40px;
+  border: none;
+  padding: 5px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  outline: none;
+  padding-left: 40px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+.login-page .form-group .email:focus,
+.form-group .password:focus {
+  border-color: var(--yellow-color);
+}
+
+.login_form .form-group .btn {
+  background-color: var(--yellow-color);
+  padding: 5px;
+  max-width: 300px;
+  height: 45px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  margin-top: 50px;
+  cursor: pointer;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.login_form .form-group .btn:hover {
+  background-color: #dc691a;
+  color: wheat;
+  transition: all 0.3s ease-in-out;
+}
+.login_form .go--left {
+  color: var(--blue-color);
+  animation: bouncing 1.5s infinite;
+}
+.login_form img {
+  width: 300px;
+  position: relative;
+  animation: up-and-down 5s linear infinite;
+}
+
+@media (max-width: 767px) {
+  .login_form img {
+    display: none;
+  }
+  .login-page {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+  .login-page .form-group {
+    margin: auto;
+  }
+  .login_form .go--left {
+    display: none;
+  }
+}
+/* Start animation image */
+@keyframes up-and-down {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: -30px;
+  }
+}
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0px);
+  }
+  40%,
+  60% {
+    transform: translateX(-20px);
+  }
+}
+/* End animation image */
