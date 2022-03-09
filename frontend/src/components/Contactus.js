@@ -26,7 +26,7 @@ class Contactus extends React.Component {
     };
     console.log(this.state);
     axios
-      .post("http://localhost:5000/api/contactUs/", contact)
+      .post("/api/contactUs/", contact)
       .then((Response) => {
         console.log(Response);
         if(Response.status === 200){

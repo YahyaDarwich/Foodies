@@ -22,7 +22,7 @@ class Fooddesc extends Component {
     const id = document.URL.split("/")[4];
     console.log(id);
     axios
-      .get(`http://localhost:5000/api/recipes/${id}`)
+      .get(`/api/recipes/${id}`)
       .then((res) => {
         this.setState({ food: res.data.response });
         // console.log(this.state.food);
@@ -36,7 +36,7 @@ class Fooddesc extends Component {
       .then(() => {
         axios
           .get(
-            `http://localhost:5000/api/recipes/category/${this.state.category_id}`
+            `/api/recipes/category/${this.state.category_id}`
           )
           .then((res) => {
             // console.log(res.data.response);
@@ -51,10 +51,10 @@ class Fooddesc extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const id = document.URL.split("/")[4];
-    axios.delete(`http://localhost:5000/api/recipes/${id}`).then((res) => {
+    axios.delete(`/api/recipes/${id}`).then((res) => {
       console.log(res.data);
       if (res.status === 200) {
-        window.location.href = "http://localhost:3000/";
+        window.location.href = "/";
       }
     });
   };
@@ -75,7 +75,7 @@ class Fooddesc extends Component {
           <section id="fooddesc" className="container">
             <div>
               <img
-                src={`http://localhost:5000/uploads/${this.state.img}`}
+                src={`/uploads/${this.state.img}`}
                 alt="fodimg"
               ></img>
               <p>{this.state.food.title}</p>
@@ -122,7 +122,7 @@ class Fooddesc extends Component {
                     >
                       <div>
                         <img
-                          src={`http://localhost:5000/uploads/${el.image.name}`}
+                          src={`/uploads/${el.image.name}`}
                           alt="food Img"
                         />
                         <p>

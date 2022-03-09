@@ -17,7 +17,7 @@ class Home extends React.Component {
     this.setStateOfParent.bind(this);
   }
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/recipes/`).then((res) => {
+    axios.get(`/api/recipes/`).then((res) => {
       const blogs = res.data;
       //console.log(blogs.response[0].title);
       this.setState({ blogs: blogs.response });

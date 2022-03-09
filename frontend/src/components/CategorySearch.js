@@ -15,7 +15,7 @@ class CategorySearch extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/categories`).then((res) => {
+    axios.get(`/api/categories`).then((res) => {
       const categories = res.data;
       //console.log(categories.response[0].category);
       this.setState({ categories: categories.response });
@@ -31,7 +31,7 @@ class CategorySearch extends React.Component {
     e.preventDefault();
     if (this.state.search) {
       axios
-        .get(`http://localhost:5000/api/recipes/title/${this.state.search}`)
+        .get(`/api/recipes/title/${this.state.search}`)
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) {
@@ -47,7 +47,7 @@ class CategorySearch extends React.Component {
     }
     if (this.state.category === "All") {
       axios
-        .get(`http://localhost:5000/api/recipes/`)
+        .get(`/api/recipes/`)
         .then((res) => {
           console.log(res.data);
           this.props.setStateOfParent(res.data.response);
@@ -57,7 +57,7 @@ class CategorySearch extends React.Component {
     } else {
       axios
         .get(
-          `http://localhost:5000/api/recipes/category/${this.state.category}`
+          `/api/recipes/category/${this.state.category}`
         )
         .then((res) => {
           console.log(res.data);

@@ -35,7 +35,7 @@ class Category extends Component {
   }
 
   handleAdd = event => {
-    axios.post('http://localhost:5000/api/categories/', { name: this.state.name })
+    axios.post('/api/categories/', { name: this.state.name })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
@@ -45,20 +45,20 @@ class Category extends Component {
       name: this.state.name,
     };
     const { editContactId } = this.state;
-    const url = `http://localhost:5000/api/categories/${editContactId}`;
+    const url = `/api/categories/${editContactId}`;
     axios.put(url, userInfo)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
 
   handledelete = (id) => {
-    axios.delete(`http://localhost:5000/api/categories/${id}`)
+    axios.delete(`/api/categories/${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/categories/`)
+    axios.get(`/api/categories/`)
       .then((res) => {
         let categories = res.data;
         this.setState({ categories: categories.response })

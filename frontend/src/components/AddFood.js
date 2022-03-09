@@ -21,7 +21,7 @@ class Popup extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/categories`).then((res) => {
+    axios.get(`/api/categories`).then((res) => {
       const categories = res.data;
       //console.log(categories.response[0].category);
       this.setState({ categories: categories.response });
@@ -61,7 +61,7 @@ class Popup extends React.Component {
     const data = new FormData();
     data.append("file", this.state.file);
     console.warn(this.state.file);
-    let url = "http://localhost:5000/api/files/upload";
+    let url = "/api/files/upload";
     axios
       .post(url, data)
       .then((res) => {
@@ -71,7 +71,7 @@ class Popup extends React.Component {
       })
       .then(() => {
         axios
-          .post(`http://localhost:5000/api/recipes`, {
+          .post(`/api/recipes`, {
             userFirstName: this.state.userFirstName,
             userLastName: this.state.userLastName,
             title: this.state.title,

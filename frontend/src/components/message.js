@@ -9,7 +9,7 @@ export default class Message extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/contactUs", { crossdomain: true })
+      .get("/api/contactUs", { crossdomain: true })
       .then((response) => {
         this.setState({ data: response.data.response });
       });
@@ -17,7 +17,7 @@ export default class Message extends Component {
 
   handleSubmit = (id) => {
     axios
-      .delete(`http://localhost:5000/api/contactUs/${id}`)
+      .delete(`/api/contactUs/${id}`)
       .then((res) => {
         if (res.status === 200) {
           window.location.reload();

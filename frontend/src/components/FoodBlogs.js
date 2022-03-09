@@ -12,7 +12,7 @@ class FoodBlogs extends React.Component {
           }}
         >
           <div className="blog">
-            <img src={`http://localhost:5000/uploads/${this.props.idImg}`} className="blog__img" alt="food" />
+            <img src={`/uploads/${this.props.idImg}`} className="blog__img" alt="food" />
             <h3 className="blog__title">{this.props.title}</h3>
             <div className="blog__info">
               <p className="blog__info__author">
