@@ -9,7 +9,7 @@ const cors = require("cors");
 var createError = require("http-errors");
 const bodyParser = require("body-parser");
 
-var indexRouter = require("./routes/index");
+// var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var recipeRouter = require("./routes/recipe");
 var contactUsRouter = require("./routes/contactUs");
@@ -22,7 +22,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/static", express.static(path.join(__dirname, "public")));
@@ -49,13 +49,16 @@ mongoose
   .catch(console.error);
 
 //my routes
-app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api/recipes", recipeRouter);
 app.use("/api/contactUs", contactUsRouter);
 app.use("/api/categories", CategoriesRoute);
 app.use("/api/users", userRoutes);
 app.use("/api/files", filesRouter);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
+});
 
 // create and error object,catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -68,10 +71,6 @@ app.use(function (err, req, res, next) {
     success: false,
     message: err.message,
   });
-});
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
 });
 
 module.exports = app;
